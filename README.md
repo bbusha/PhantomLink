@@ -1,5 +1,20 @@
 # PhantomLink
 
+## What this Release Actually IS
+This release is a unity mod tool with an external UI and Universal compatibility between MelonLoader 5.5 up to 7.1
+it is a more powerful tool heavily inspired by unityExplorer, with many new feature being added with each release
+
+should be compatible with ANY unity game, if its not, create a ticket in issues
+
+
+
+
+
+
+
+
+
+
 ## What This release Contains
 - PhantomLink.exe (published output)
 - Mods\
