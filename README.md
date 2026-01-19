@@ -3,10 +3,30 @@
 ## What this Release Actually IS
 This release is a unity mod tool with an external UI and Universal compatibility between MelonLoader 5.5 up to 7.1
 it is a more powerful tool heavily inspired by unityExplorer, with many new feature being added with each release
+works with Il2Cpp and Mono Unity games
 
-should be compatible with ANY unity game, if its not, create a ticket in issues
+has multiple tabs Including 
 
+--
+-Types
+-Classes
+-Method Browser
+-Properties
+-Scene Browser
+-Hierarchy
+-Game Controls
+-Object Finder
+-Scene Hierarchy
+-Factory Browser (attempts to find Object Spawners)
+-Field Editor
+-Patch Manager
+-Logs
+--
 
+should be compatible with ANY unity game, if its not, create a issue in issues
+
+this release is completley free, after days debating on implementing it as a paid service, i decided everyone deserves it for free.
+however with that stated, this tool will not be Open Source. and i would prefer if no one releases this tool as a copy or as a paid service if they reverse engineer it or just clone the repo.
 
 
 
