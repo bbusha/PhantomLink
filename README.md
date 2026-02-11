@@ -38,6 +38,7 @@ if you do decide to release a fork, please add me to the tool credits somewhere,
 
 
 ## What This release Contains
+- Main tools Source code
 - PhantomLink.exe (published output)
 - Mods\
   - net6\PhantomLink.MelonIntegration.dll
