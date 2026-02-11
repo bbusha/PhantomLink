@@ -1,0 +1,40 @@
+=== RUNTIME TOOL LOG - 2026-01-19 00:02:27 ===
+
+[INFO] 00:02:27.545 [T1] - === APPLICATION STARTUP ===
+[INFO] 00:02:27.546 [T1] - App constructor started
+[INFO] 00:02:27.547 [T1] - App constructor completed - event handlers registered
+[INFO] 00:02:27.587 [T1] - Assembly resolver registered (probeDirs: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\, C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\Dependencies\Il2CppInterop\net6.0)
+[INFO] 00:02:27.588 [T1] - Application startup event triggered
+[INFO] 00:02:27.588 [T1] - Starting core systems initialization...
+[INFO] 00:02:27.720 [T1] - Log terminal started for: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\RuntimeTool_Log_20260119_000227.txt
+[INFO] 00:02:27.721 [T1] - Current Directory: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows
+[INFO] 00:02:27.721 [T1] - Application Base: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\
+[INFO] 00:02:27.726 [T1] - Process Path: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\MyRuntimeTool.GUI.exe
+[INFO] 00:02:27.727 [T1] - MainWindow will be created automatically by StartupUri
+[INFO] 00:02:27.727 [T1] - Application startup completed successfully
+[INFO] 00:02:28.443 [T1] - === INITIALIZE SYSTEMS STARTED ===
+[INFO] 00:02:28.444 [T1] - Step 1/5: Starting IPC client...
+[INFO] 00:02:28.446 [T1] - IPC Meloader Client started (pipe: 'MelonModUniversalPipe')
+[INFO] 00:02:28.446 [T1] - ✓ IPC client started
+[INFO] 00:02:28.453 [T1] - Step 2/5: Loading patches...
+[INFO] 00:02:28.456 [T1] - ✓ Patches loaded successfully
+[INFO] 00:02:28.456 [T1] - Step 3/5: Attempting metadata auto-detect from tool location...
+[INFO] 00:02:28.463 [T1] - Metadata auto-detect: toolBase='C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\', guessedGameDir='(none)'
+[INFO] 00:02:28.468 [T1] - Step 4/5: Runtime operations - HANDLED BY PIPE MOD
+[INFO] 00:02:28.469 [T1] - Step 5/5: Updating UI status...
+[INFO] 00:02:28.472 [T1] - ✓ InitializeSystems completed successfully
+[INFO] 00:02:28.473 [T1] - === INITIALIZE SYSTEMS COMPLETED ===
+[INFO] 00:02:28.446 [T10] - [IPC_RECONNECT] Reconnect thread started
+[INFO] 00:02:28.506 [T10] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 00:02:28.508 [T10] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 00:02:28.520 [T10] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 00:02:31.518 [T10] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 00:02:32.531 [T10] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 00:02:32.533 [T10] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 00:02:32.534 [T10] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[WARN] 00:02:35.433 [T1] - IPC reconnect thread did not terminate gracefully
+[INFO] 00:02:35.434 [T1] - IPC Meloader Client stopped
+[INFO] 00:02:35.435 [T1] - MetadataLoader cleared
+[INFO] 00:02:35.439 [T1] - === APPLICATION SHUTDOWN ===
+[INFO] 00:02:35.440 [T1] - Exit code: 0
+[INFO] 00:02:35.440 [T1] - Application shutdown completed

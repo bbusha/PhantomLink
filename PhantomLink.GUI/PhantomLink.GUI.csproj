@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PhantomLink</AssemblyName>
+    <Product>PhantomLink</Product>
+    <Title>PhantomLink</Title>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhantomLink.Core\PhantomLink.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+</Project>

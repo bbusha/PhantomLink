@@ -1,0 +1,64 @@
+<UserControl x:Class="PhantomLink.GUI.MethodBrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Search Controls -->
+        <StackPanel Grid.Row="0" Margin="5" Orientation="Horizontal">
+            <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SearchBox" Width="200" Margin="0,0,5,0" TextChanged="SearchBox_TextChanged"/>
+            <TextBlock Text="Type Filter:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+            <TextBox x:Name="TypeFilterBox" Width="150" Margin="0,0,5,0"/>
+            <Button Content="Search" Click="Search_Click" Margin="0,0,5,0"/>
+            <CheckBox x:Name="AutoSearchCheckBox" Content="Auto" IsChecked="False" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <Button Content="Refresh Assemblies" Click="RefreshAssemblies_Click"/>
+        </StackPanel>
+        
+        <!-- Assembly Info -->
+        <StackPanel Grid.Row="1" Margin="5" Orientation="Horizontal">
+            <TextBlock x:Name="AssemblyCountText" Text="Assemblies: 0" Margin="0,0,10,0"/>
+            <TextBlock x:Name="MethodCountText" Text="Methods: 0"/>
+        </StackPanel>
+        
+        <!-- Methods Grid -->
+        <DataGrid x:Name="MethodsGrid" Grid.Row="2" Margin="5"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Method" Binding="{Binding MethodName}" Width="150"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding DeclaringType}" Width="200"/>
+                <DataGridTextColumn Header="Return" Binding="{Binding ReturnType}" Width="80"/>
+                <DataGridTextColumn Header="Parameters" Binding="{Binding ParameterTypes, Converter={StaticResource ArrayToStringConverter}}" Width="150"/>
+                <DataGridCheckBoxColumn Header="Static" Binding="{Binding IsStatic}" Width="50"/>
+                <DataGridCheckBoxColumn Header="Public" Binding="{Binding IsPublic}" Width="50"/>
+                <DataGridTemplateColumn Header="Actions" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Patch" Click="PatchMethod_Click" Margin="2" Width="60"/>
+                                <Button Content="Invoke" Click="InvokeMethod_Click" Margin="2" Width="60"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Status -->
+        <StatusBar Grid.Row="3">
+            <TextBlock x:Name="MethodStatus" Text="Click Search to browse methods"/>
+        </StatusBar>
+    </Grid>
+</UserControl>

@@ -1,0 +1,10 @@
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net6.0\MyRuntimeTool.MelonIntegration.deps.json
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net6.0\MyRuntimeTool.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net6.0\MyRuntimeTool.MelonIntegration.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\MyRuntimeTool.MelonIntegration.csproj.AssemblyReference.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\MyRuntimeTool.MelonIntegration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\MyRuntimeTool.MelonIntegration.csproj.CoreCompileInputs.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\MyRuntimeTool.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\refint\MyRuntimeTool.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\MyRuntimeTool.MelonIntegration.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net6.0\ref\MyRuntimeTool.MelonIntegration.dll

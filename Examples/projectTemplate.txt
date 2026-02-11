@@ -1,0 +1,107 @@
+ You are assisting with a complex external Unity runtime modding tool. The tool is not a mod itself. It is a standalone desktop application that connects to a Unity game at runtime through a MelonLoader pipe mod . The goal is to provide UnityExplorer‑level runtime inspection and modification, but from outside the game.
+The project has two major components:
+1. 	The external tool (GUI application).
+2. 	The MelonLoader pipe mod (in‑game backend executor).
+These two components communicate exclusively through IPC. The external tool never touches Unity runtime directly. The pipe mod performs all runtime operations inside the game.
+
+1. External Tool Responsibilities (Detailed)
+The external tool is responsible for everything related to metadata, UI, and user interaction. It does not execute any game logic. It does not load Unity runtime. It does not use Il2CppInterop. It does not use Harmony. It does not reflect live objects.
+Its responsibilities include:
+A. 	Loading metadata assemblies from disk
+• 	For Il2Cpp games, it loads the generated assemblies from MelonLoader\Il2CppAssemblies.
+• 	For Mono games, it loads the managed assemblies from <GameName>_Data\Managed.
+These assemblies contain type names, method signatures, field names, and property definitions. They are used only for reflection and GUI building.
+B. 	Building the entire GUI
+• 	Object explorer
+• 	Scene hierarchy viewer
+• 	Field inspector
+• 	Method browser
+• 	Method invocation UI
+• 	Patch manager
+• 	Logs and console
+• 	Search and filtering tools
+The GUI is driven entirely by metadata and IPC responses.
+C. 	Maintaining a metadata model
+The external tool builds an internal representation of all types, methods, fields, and properties. This model is used to populate the UI and to generate IPC commands.
+D. 	Communicating with the pipe mod
+The external tool sends structured IPC commands such as:
+GET_INSTANCES, GET_FIELDS, READ_FIELD, WRITE_FIELD, INVOKE_METHOD, PATCH_METHOD, GET_SCENE, GET_COMPONENTS, etc.
+E. 	Receiving and interpreting responses
+The external tool updates the UI based on the results returned by the pipe mod.
+F. 	Never performing runtime operations
+The external tool must not:
+• 	Access UnityEngine
+• 	Access Il2CppInterop
+• 	Access live objects
+• 	Invoke game methods
+• 	Read or write game fields
+• 	Apply Harmony patches
+All of these must be delegated to the pipe mod.
+
+2. MelonLoader Pipe Mod Responsibilities (Detailed)
+The pipe mod runs inside the Unity game. It has full access to Unity runtime, Il2CppInterop (for Il2Cpp games), .NET reflection (for Mono games), and Harmony.
+Its responsibilities include:
+A. 	Implementing an IPC server
+It listens for commands from the external tool and sends back structured responses.
+B. 	Resolving types, methods, and fields
+• 	For Il2Cpp games, it uses Il2CppInterop to resolve Il2CppClass, Il2CppMethodInfo, and field offsets.
+• 	For Mono games, it uses standard .NET reflection.
+C. 	Enumerating objects
+It can return all instances of a given type, including UnityEngine.Object subclasses.
+D. 	Reading and writing fields
+It performs safe field access on live objects.
+E. 	Invoking methods
+It can call methods on live objects, including Il2Cpp methods.
+F. 	Applying Harmony patches
+It can patch methods at runtime based on instructions from the external tool.
+G. 	Executing code on Unity’s main thread
+It ensures thread‑safe operations for Unity APIs.
+H. 	Returning structured results
+Every IPC command must return a clear, structured response.
+
+3. Il2Cpp vs Mono Handling (Detailed)
+A. 	Il2Cpp Games
+• 	External tool loads metadata from MelonLoader\Il2CppAssemblies.
+• 	Pipe mod uses Il2CppInterop to resolve real runtime types and objects.
+• 	External tool uses metadata only; pipe mod uses runtime data.
+B. 	Mono Games
+• 	External tool loads metadata from <GameName>_Data\Managed.
+• 	Pipe mod uses .NET reflection to resolve runtime types and objects.
+• 	External tool uses metadata only; pipe mod uses runtime data.
+The external tool never needs to know whether the game is Il2Cpp or Mono beyond choosing the correct metadata folder.
+
+4. How GPT‑5.2‑Max Should Improve the Project
+GPT‑5.2‑Max should focus on improvements in these areas:
+A. 	IPC protocol
+• 	More robust message formats
+• 	Better error handling
+• 	Async request batching
+• 	Streaming large results (scene hierarchies, object lists)
+B. 	Metadata handling
+• 	Caching reflected metadata
+• 	Faster type lookup
+• 	Better type filtering and categorization
+• 	Cross‑assembly type resolution
+C. 	Runtime command design
+• 	Clear separation of read, write, invoke, patch, and query commands
+• 	Consistent naming
+• 	Version‑agnostic behavior
+• 	Extensible command structure
+D. 	Pipe mod stability
+• 	Thread‑safe Unity operations
+• 	Safe Il2Cpp pointer handling
+• 	Graceful error recovery
+• 	Logging and diagnostics
+E. 	External tool UX
+• 	Responsive UI updates
+• 	Non‑blocking IPC calls
+• 	Background metadata loading
+• 	Better search and filtering
+• 	Object pinning and bookmarking
+F. 	Developer experience
+• 	Clear project structure
+• 	Modular code organization
+• 	Strong typing for IPC messages
+• 	Unit tests for metadata and IPC layers
+• 	Logging and debugging tools
+GPT‑5.2‑Max should propose improvements that strengthen the architecture without breaking the separation of responsibilities.

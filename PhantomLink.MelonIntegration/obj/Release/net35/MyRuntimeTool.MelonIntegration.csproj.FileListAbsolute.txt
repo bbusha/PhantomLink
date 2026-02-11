@@ -1,0 +1,10 @@
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntimeTool.MelonIntegration.csproj.AssemblyReference.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntimeTool.MelonIntegration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntimeTool.MelonIntegration.csproj.CoreCompileInputs.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net35\MyRuntimeTool.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net35\MyRuntimeTool.MelonIntegration.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net35\0Harmony.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\bin\Release\net35\MelonLoader.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntim.97BE8C89.Up2Date
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntimeTool.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.MelonIntegration\obj\Release\net35\MyRuntimeTool.MelonIntegration.pdb

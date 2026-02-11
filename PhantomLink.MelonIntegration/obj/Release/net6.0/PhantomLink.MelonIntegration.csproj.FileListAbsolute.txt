@@ -1,0 +1,13 @@
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\bin\Release\net6.0\PhantomLink.MelonIntegration.deps.json
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\bin\Release\net6.0\PhantomLink.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\bin\Release\net6.0\PhantomLink.MelonIntegration.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\bin\Release\net6.0\PhantomLink.Core.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\bin\Release\net6.0\PhantomLink.Core.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomLink.MelonIntegration.csproj.AssemblyReference.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomLink.MelonIntegration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomLink.MelonIntegration.csproj.CoreCompileInputs.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomL.84C5CD0A.Up2Date
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomLink.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\refint\PhantomLink.MelonIntegration.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\PhantomLink.MelonIntegration.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\PhantomLink.MelonIntegration\obj\Release\net6.0\ref\PhantomLink.MelonIntegration.dll

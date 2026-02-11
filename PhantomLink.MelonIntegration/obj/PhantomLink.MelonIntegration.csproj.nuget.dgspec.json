@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.MelonIntegration\\PhantomLink.MelonIntegration.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj",
+        "projectName": "PhantomLink.Core",
+        "projectPath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj",
+        "packagesPath": "C:\\Users\\bbush\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bbush\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.MelonIntegration\\PhantomLink.MelonIntegration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.MelonIntegration\\PhantomLink.MelonIntegration.csproj",
+        "projectName": "PhantomLink.MelonIntegration",
+        "projectPath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.MelonIntegration\\PhantomLink.MelonIntegration.csproj",
+        "packagesPath": "C:\\Users\\bbush\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.MelonIntegration\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bbush\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net35",
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj": {
+                "projectPath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj"
+              }
+            }
+          },
+          "net35": {
+            "targetAlias": "net35",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "LavaGang.MelonLoader": {
+              "target": "Package",
+              "version": "[0.7.1, )"
+            },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        },
+        "net35": {
+          "targetAlias": "net35",
+          "dependencies": {
+            "LavaGang.MelonLoader": {
+              "target": "Package",
+              "version": "[0.7.1, )"
+            },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies.net35": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

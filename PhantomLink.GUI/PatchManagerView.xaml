@@ -1,0 +1,51 @@
+<UserControl x:Class="PhantomLink.GUI.PatchManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PhantomLink.GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Toolbar -->
+        <ToolBar Grid.Row="0" Margin="5">
+            <Button Content="Add Patch" Click="AddPatch_Click" Margin="2" Background="Black"/>
+            <Button Content="Remove Patch" Click="RemovePatch_Click" Margin="2" Background="Black"/>
+            <Button Content="Enable Selected" Click="EnablePatch_Click" Margin="2" Background="Black"/>
+            <Button Content="Disable Selected" Click="DisablePatch_Click" Margin="2" Background="Black"/>
+            <Separator/>
+            <Button Content="Apply All" Click="ApplyAll_Click" Margin="2" Background="Black"/>
+            <Button Content="Remove All" Click="RemoveAll_Click" Margin="2" Background="Black"/>
+            <Separator/>
+            <Button Content="Save" Click="Save_Click" Margin="2" Background="Black"/>
+            <Button Content="Reload" Click="Reload_Click" Margin="2" Background="Black"/>
+        </ToolBar>
+        
+        <!-- Patches List -->
+        <DataGrid x:Name="PatchesGrid" Grid.Row="1" Margin="5"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Assembly" Binding="{Binding AssemblyName}" Width="120"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding TypeName}" Width="150"/>
+                <DataGridTextColumn Header="Method" Binding="{Binding MethodName}" Width="150"/>
+                <DataGridTextColumn Header="Patch Type" Binding="{Binding PatchType}" Width="80"/>
+                <DataGridTextColumn Header="Patch Method" Binding="{Binding PatchMethod}" Width="150"/>
+                <DataGridCheckBoxColumn Header="Enabled" Binding="{Binding Enabled}" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Status -->
+        <StatusBar Grid.Row="2">
+            <TextBlock x:Name="PatchStatus" Text="No patches loaded"/>
+        </StatusBar>
+    </Grid>
+</UserControl>

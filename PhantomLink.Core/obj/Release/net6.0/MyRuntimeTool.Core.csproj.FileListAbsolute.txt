@@ -1,0 +1,10 @@
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\bin\Release\net6.0\MyRuntimeTool.Core.deps.json
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\bin\Release\net6.0\MyRuntimeTool.Core.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\MyRuntimeTool.Core.csproj.AssemblyReference.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\MyRuntimeTool.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\MyRuntimeTool.Core.csproj.CoreCompileInputs.cache
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\MyRuntimeTool.Core.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\refint\MyRuntimeTool.Core.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\ref\MyRuntimeTool.Core.dll
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\bin\Release\net6.0\MyRuntimeTool.Core.pdb
+C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.Core\obj\Release\net6.0\MyRuntimeTool.Core.pdb

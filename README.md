@@ -26,7 +26,9 @@ has multiple tabs Including
 should be compatible with ANY unity game, if its not, create a issue in issues
 
 this release is completley free, after days debating on implementing it as a paid service, i decided everyone deserves it for free.
-however with that stated, this tool will not be Open Source. and i would prefer if no one releases this tool as a copy or as a paid service if they reverse engineer it or just clone the repo.
+however with that stated, i would prefer if no one releases this tool as a copy or as a paid service if they reverse engineer it or just clone the repo.
+if you do decide to release a fork, please add me to the tool credits somewhere, all i ask is to be thanked for the project base.
+
 
 
 

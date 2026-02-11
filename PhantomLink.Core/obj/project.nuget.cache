@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "aIe6/3w+/Js=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bbush\\source\\repos\\UnityExternalModdingTool\\PhantomLink.Core\\PhantomLink.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bbush\\.nuget\\packages\\lib.harmony\\2.4.2\\lib.harmony.2.4.2.nupkg.sha512",
+    "C:\\Users\\bbush\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\bbush\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\bbush\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\bbush\\.nuget\\packages\\system.text.json\\8.0.6\\system.text.json.8.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

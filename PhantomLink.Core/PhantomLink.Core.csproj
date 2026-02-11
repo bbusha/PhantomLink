@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>PhantomLink.Core</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.6" />
+  </ItemGroup>
+</Project>

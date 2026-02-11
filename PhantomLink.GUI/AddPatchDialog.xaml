@@ -1,0 +1,56 @@
+<Window x:Class="PhantomLink.GUI.AddPatchDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Add New Patch" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Assembly -->
+        <TextBlock Grid.Row="0" Text="Assembly Name:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="1" x:Name="AssemblyTextBox" Margin="0,0,0,10"/>
+        
+        <!-- Type -->
+        <TextBlock Grid.Row="2" Text="Type Name:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="3" x:Name="TypeTextBox" Margin="0,0,0,10"/>
+        
+        <!-- Method -->
+        <TextBlock Grid.Row="4" Text="Method Name:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="5" x:Name="MethodTextBox" Margin="0,0,0,10"/>
+        
+        <!-- Patch Type -->
+        <TextBlock Grid.Row="6" Text="Patch Type:" Margin="0,0,0,5"/>
+        <ComboBox Grid.Row="7" x:Name="PatchTypeComboBox" Margin="0,0,0,10">
+            <ComboBoxItem Content="Prefix"/>
+            <ComboBoxItem Content="Postfix"/>
+            <ComboBoxItem Content="Transpiler"/>
+        </ComboBox>
+        
+        <!-- Patch Method -->
+        <TextBlock Grid.Row="8" Text="Patch Method Name:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="9" x:Name="PatchMethodTextBox" Margin="0,0,0,10"/>
+        
+        <!-- Enabled -->
+        <CheckBox Grid.Row="10" x:Name="EnabledCheckBox" Content="Enabled" IsChecked="True" Margin="0,0,0,10"/>
+        
+        <!-- Buttons -->
+        <StackPanel Grid.Row="11" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Width="80" Margin="0,0,10,0" Click="OK_Click"/>
+            <Button Content="Cancel" Width="80" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

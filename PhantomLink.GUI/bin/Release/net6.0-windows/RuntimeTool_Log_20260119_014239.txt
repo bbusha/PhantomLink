@@ -1,0 +1,193 @@
+=== RUNTIME TOOL LOG - 2026-01-19 01:42:39 ===
+
+[INFO] 01:42:39.902 [T1] - === APPLICATION STARTUP ===
+[INFO] 01:42:39.904 [T1] - App constructor started
+[INFO] 01:42:39.905 [T1] - App constructor completed - event handlers registered
+[INFO] 01:42:39.940 [T1] - Assembly resolver registered (probeDirs: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\, C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\Dependencies\Il2CppInterop\net6.0)
+[INFO] 01:42:39.940 [T1] - Application startup event triggered
+[INFO] 01:42:39.941 [T1] - Starting core systems initialization...
+[INFO] 01:42:40.060 [T1] - Log terminal started for: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\RuntimeTool_Log_20260119_014239.txt
+[INFO] 01:42:40.060 [T1] - Current Directory: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows
+[INFO] 01:42:40.061 [T1] - Application Base: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\
+[INFO] 01:42:40.065 [T1] - Process Path: C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\MyRuntimeTool.GUI.exe
+[INFO] 01:42:40.065 [T1] - MainWindow will be created automatically by StartupUri
+[INFO] 01:42:40.066 [T1] - Application startup completed successfully
+[INFO] 01:42:40.684 [T1] - === INITIALIZE SYSTEMS STARTED ===
+[INFO] 01:42:40.685 [T1] - Step 1/5: Starting IPC client...
+[INFO] 01:42:40.693 [T1] - IPC Meloader Client started (pipe: 'MelonModUniversalPipe')
+[INFO] 01:42:40.694 [T1] - ✓ IPC client started
+[INFO] 01:42:40.695 [T1] - Step 2/5: Loading patches...
+[INFO] 01:42:40.697 [T1] - ✓ Patches loaded successfully
+[INFO] 01:42:40.698 [T1] - Step 3/5: Attempting metadata auto-detect from tool location...
+[INFO] 01:42:40.707 [T1] - Metadata auto-detect: toolBase='C:\Users\bbush\source\repos\UnityExternalModdingTool\MyRuntimeTool.GUI\bin\Release\net6.0-windows\', guessedGameDir='(none)'
+[INFO] 01:42:40.708 [T1] - Step 4/5: Runtime operations - HANDLED BY PIPE MOD
+[INFO] 01:42:40.709 [T1] - Step 5/5: Updating UI status...
+[INFO] 01:42:40.710 [T1] - ✓ InitializeSystems completed successfully
+[INFO] 01:42:40.711 [T1] - === INITIALIZE SYSTEMS COMPLETED ===
+[INFO] 01:42:40.694 [T8] - [IPC_RECONNECT] Reconnect thread started
+[INFO] 01:42:40.732 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:42:40.740 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:42:40.743 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:42:43.754 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:42:44.758 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:42:44.759 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:42:44.759 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:42:47.763 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:42:48.774 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:42:48.775 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:42:48.776 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:42:51.772 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:42:52.779 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:42:52.780 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:42:52.781 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:42:55.778 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:42:56.788 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:42:56.789 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:42:56.789 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:42:59.798 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:00.805 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:00.806 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:00.807 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:03.803 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:04.813 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:04.813 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:04.814 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:07.813 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:08.824 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:08.825 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:08.826 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:11.820 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:12.823 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:12.824 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:12.824 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:15.826 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:16.839 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:16.839 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:16.840 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:19.836 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:20.848 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:20.849 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:20.849 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:23.839 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:24.849 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:24.850 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:24.850 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:27.862 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:28.868 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:28.869 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:28.870 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:31.867 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:32.875 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:32.876 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:32.876 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:35.877 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:36.880 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:36.880 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:36.881 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:39.881 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:40.886 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:40.887 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:40.888 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:43.890 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:44.895 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:44.896 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:44.896 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:47.909 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:48.916 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:48.917 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:48.919 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:51.918 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:52.927 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:52.928 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:52.929 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:55.938 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:43:56.953 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:43:56.954 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:43:56.954 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:43:59.955 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:00.964 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:00.964 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:00.965 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:03.969 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:04.985 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:04.986 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:04.986 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:07.987 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:08.988 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:08.988 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:08.989 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:11.975 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:12.984 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:12.985 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:12.985 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:15.986 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:16.992 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:16.993 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:16.993 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:19.997 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:21.013 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:21.013 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:21.014 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:24.006 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:25.021 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:25.022 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:25.022 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:28.028 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:29.040 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:29.041 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:29.041 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:32.050 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:33.061 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:33.061 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:33.062 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:36.059 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:37.067 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:37.068 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:37.069 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:40.068 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:41.078 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:41.079 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:41.079 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:44.076 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:45.077 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:45.078 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:45.078 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:48.074 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:49.089 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:49.089 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:49.090 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:52.084 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:53.095 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:53.095 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:53.096 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:44:56.090 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:44:57.105 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:44:57.105 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:44:57.106 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:00.102 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:01.105 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:45:01.118 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:45:01.119 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:04.129 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:05.143 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:45:05.144 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:45:05.145 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:08.134 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:09.146 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:45:09.147 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:45:09.147 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:12.146 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:13.170 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:45:13.180 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:45:13.181 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:16.180 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:17.183 [T8] - [IPC_CONNECT] Starting connection attempt to pipe: MelonModUniversalPipe
+[INFO] 01:45:17.184 [T8] - [IPC_CONNECT] Creating NamedPipeClientStream for: MelonModUniversalPipe
+[INFO] 01:45:17.185 [T8] - [IPC_CONNECT] Attempting connection with 3000ms timeout...
+[INFO] 01:45:20.183 [T8] - [IPC_CONNECT] Timeout - MelonLoader mod not available yet - will retry
+[INFO] 01:45:21.196 [T8] - [IPC_RECONNECT] Reconnect thread stopped
+[INFO] 01:45:21.200 [T1] - IPC Meloader Client stopped
+[INFO] 01:45:21.201 [T1] - MetadataLoader cleared
+[INFO] 01:45:21.228 [T1] - === APPLICATION SHUTDOWN ===
+[INFO] 01:45:21.228 [T1] - Exit code: 0
+[INFO] 01:45:21.229 [T1] - Application shutdown completed

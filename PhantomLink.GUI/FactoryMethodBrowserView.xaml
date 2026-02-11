@@ -1,0 +1,52 @@
+<UserControl x:Class="PhantomLink.GUI.FactoryMethodBrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+            <TextBox x:Name="SearchBox" Width="260" Margin="0,0,10,0"/>
+            <Button Content="Find Static" Width="120" Margin="0,0,10,0" Click="FindStatic_Click"/>
+            <TextBlock Text="Instance Id:" VerticalAlignment="Center" Margin="10,0,6,0"/>
+            <TextBox x:Name="InstanceIdBox" Width="140" Margin="0,0,10,0"/>
+            <Button Content="Find Instance" Width="120" Margin="0,0,10,0" Click="FindInstance_Click"/>
+            <TextBlock x:Name="CountText" VerticalAlignment="Center" Foreground="Gray"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="MethodsGrid" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="MethodsGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="70"/>
+                <DataGridCheckBoxColumn Header="Static" Binding="{Binding IsStatic}" Width="60"/>
+                <DataGridTextColumn Header="Return" Binding="{Binding ReturnType}" Width="220"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding DeclaringType}" Width="260"/>
+                <DataGridTextColumn Header="Method" Binding="{Binding MethodName}" Width="160"/>
+                <DataGridTextColumn Header="Params" Binding="{Binding Params}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GroupBox Grid.Row="2" Margin="5" Header="Arguments">
+            <DockPanel Margin="8">
+                <Button DockPanel.Dock="Right" Content="Invoke" Width="120" Click="Invoke_Click"/>
+                <TextBlock Text="Provide exact arguments (use tracked ids for Unity objects)." Foreground="Gray" VerticalAlignment="Center"/>
+            </DockPanel>
+        </GroupBox>
+
+        <DataGrid Grid.Row="3" x:Name="ArgsGrid" Margin="5" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="160" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="320" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

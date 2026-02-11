@@ -1,0 +1,566 @@
+<UserControl x:Class="PhantomLink.GUI.GameControlsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Connection Status -->
+        <StackPanel Grid.Row="0" Margin="10" Orientation="Horizontal">
+            <Ellipse x:Name="ConnectionStatus" Width="12" Height="12" Fill="Red" Margin="0,0,5,0"/>
+            <TextBlock x:Name="ConnectionStatusText" Text="Not Connected to Game" VerticalAlignment="Center"/>
+            <Button x:Name="ConnectButton" Content="Connect" Click="ConnectButton_Click" Margin="20,0,0,0" Width="90"/>
+            <Button x:Name="DisconnectButton" Content="Disconnect" Click="DisconnectButton_Click" Margin="5,0,0,0" Width="90" IsEnabled="False"/>
+            <TextBlock Text="Role:" VerticalAlignment="Center" Margin="18,0,6,0"/>
+            <ComboBox x:Name="UserRoleBox" Width="120" SelectionChanged="UserRoleBox_SelectionChanged"/>
+        </StackPanel>
+        
+        <!-- Game Controls -->
+        <TabControl x:Name="MainTabs" Grid.Row="1" Margin="5">
+            <TabItem Header="Basic Controls">
+                <ScrollViewer>
+                    <StackPanel Margin="10">
+                        <GroupBox Header="Player Controls" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="ToggleGodModeButton" Content="Toggle God Mode" Click="ToggleGodMode_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="InfiniteHealthButton" Content="Infinite Health" Click="InfiniteHealth_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="InfiniteAmmoButton" Content="Infinite Ammo" Click="InfiniteAmmo_Click" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="AddHealthButton" Content="Add Health" Click="AddHealth_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="AddMoneyButton" Content="Add Money" Click="AddMoney_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="AddXpButton" Content="Add XP" Click="AddXP_Click" Width="120"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Game State" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="PauseGameButton" Content="Pause Game" Click="PauseGame_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ResumeGameButton" Content="Resume Game" Click="ResumeGame_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="SlowMotionButton" Content="Slow Motion" Click="SlowMotion_Click" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="SkipLevelButton" Content="Skip Level" Click="SkipLevel_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="RestartLevelButton" Content="Restart Level" Click="RestartLevel_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="UnlockAllButton" Content="Unlock All" Click="UnlockAll_Click" Width="120"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Camera Controls" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="FreeCameraButton" Content="Free Camera" Click="FreeCamera_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="NoclipButton" Content="Noclip" Click="Noclip_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ZoomOutButton" Content="Zoom Out" Click="ZoomOut_Click" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="FirstPersonButton" Content="First Person" Click="FirstPerson_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ThirdPersonButton" Content="Third Person" Click="ThirdPerson_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ResetCameraButton" Content="Reset Camera" Click="ResetCamera_Click" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="FullbrightButton" Content="Fullbright" Click="Fullbright_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="TeleportToCamButton" Content="TP to Camera" Click="TeleportToCam_Click" Width="120" Margin="0,0,5,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="Capabilities" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Button x:Name="RefreshCapabilitiesButton" Content="Refresh Capabilities" Click="RefreshCapabilitiesButton_Click" Width="150"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Text="Player:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityPlayerText" Text="Unknown"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Text="Camera:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityCameraText" Text="Unknown"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Text="Health:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityHealthBindingText" Text="Not bound"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Text="Ammo:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityAmmoBindingText" Text="Not bound"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Text="Money:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityMoneyBindingText" Text="Not bound"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <TextBlock Text="XP:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityXpBindingText" Text="Not bound"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <TextBlock Text="Stamina:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="CapabilityStaminaBindingText" Text="Not bound"/>
+                                </StackPanel>
+
+                                <ListView x:Name="CapabilitiesListView" Height="220">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Command" Width="170" DisplayMemberBinding="{Binding Command}"/>
+                                            <GridViewColumn Header="Available" Width="70" DisplayMemberBinding="{Binding Available}"/>
+                                            <GridViewColumn Header="Reason" Width="220" DisplayMemberBinding="{Binding Reason}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            
+            <TabItem Header="Advanced Controls">
+                <ScrollViewer>
+                    <StackPanel Margin="10">
+                        <GroupBox Header="Entity Spawning" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Mode:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <ComboBox x:Name="SpawnModeComboBox" Width="120" Margin="0,0,10,0" SelectionChanged="SpawnModeComboBox_SelectionChanged"/>
+                                    <TextBlock Text="Primitive:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <ComboBox x:Name="EntityTypeComboBox" Width="140" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Source:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="SpawnSourceBox" Width="220" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Name:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="SpawnNameBox" Width="160" Margin="0,0,10,0"/>
+                                    <Button x:Name="SpawnEntityButton" Content="Spawn Entity" Click="SpawnEntity_Click" Width="100"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Position X:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="PositionXBox" Width="60" Margin="0,0,5,0" Text="0"/>
+                                    <TextBlock Text="Y:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="PositionYBox" Width="60" Margin="0,0,5,0" Text="0"/>
+                                    <TextBlock Text="Z:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="PositionZBox" Width="60" Margin="0,0,5,0" Text="0"/>
+                                    <TextBlock Text="Rot:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                    <TextBox x:Name="RotationXBox" Width="60" Margin="0,0,5,0" Text="0"/>
+                                    <TextBlock Text="," VerticalAlignment="Center"/>
+                                    <TextBox x:Name="RotationYBox" Width="60" Margin="5,0,5,0" Text="0"/>
+                                    <TextBlock Text="," VerticalAlignment="Center"/>
+                                    <TextBox x:Name="RotationZBox" Width="60" Margin="5,0,5,0" Text="0"/>
+                                    <TextBlock Text="Scale:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                    <TextBox x:Name="ScaleXBox" Width="60" Margin="0,0,5,0" Text="1"/>
+                                    <TextBlock Text="," VerticalAlignment="Center"/>
+                                    <TextBox x:Name="ScaleYBox" Width="60" Margin="5,0,5,0" Text="1"/>
+                                    <TextBlock Text="," VerticalAlignment="Center"/>
+                                    <TextBox x:Name="ScaleZBox" Width="60" Margin="5,0,0,0" Text="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Factory Type:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="FactoryTypeBox" Width="280" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Method:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="FactoryMethodBox" Width="160" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Args (CSV):" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox x:Name="FactoryArgsBox" Width="220"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Time Controls" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Time Scale:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <Slider x:Name="TimeScaleSlider" Width="200" Minimum="0" Maximum="2" Value="1" TickFrequency="0.1" Margin="0,0,5,0"/>
+                                    <TextBlock x:Name="TimeScaleValue" Text="1.0" VerticalAlignment="Center" Width="30"/>
+                                    <Button x:Name="ApplyTimeScaleButton" Content="Apply" Click="ApplyTimeScale_Click" Margin="5,0,0,0" Width="60"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="SetDayTimeButton" Content="Day Time" Click="SetDayTime_Click" Width="100" Margin="0,0,5,0"/>
+                                    <Button x:Name="SetNightTimeButton" Content="Night Time" Click="SetNightTime_Click" Width="100" Margin="0,0,5,0"/>
+                                    <Button x:Name="FreezeTimeButton" Content="Freeze Time" Click="FreezeTime_Click" Width="100"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Debug Controls" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="ShowCollidersButton" Content="Show Colliders" Click="ShowColliders_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ShowFpsButton" Content="Show FPS" Click="ShowFPS_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="WireframeModeButton" Content="Wireframe Mode" Click="WireframeMode_Click" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Button x:Name="DebugConsoleButton" Content="Debug Console" Click="DebugConsole_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="ReloadSceneButton" Content="Reload Scene" Click="ReloadScene_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button x:Name="CrashGameButton" Content="Crash Game" Click="CrashGame_Click" Width="120" Background="Red" Foreground="White"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            
+            <TabItem Header="Real-time Monitoring">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="10">
+                        <GroupBox Header="Game Stats" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="FPS:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="FpsText" Text="0" Width="50"/>
+                                    <TextBlock Text="Memory:" Width="80" FontWeight="Bold" Margin="20,0,0,0"/>
+                                    <TextBlock x:Name="MemoryText" Text="0 MB" Width="80"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Player Health:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="HealthText" Text="0" Width="50"/>
+                                    <TextBlock Text="Position:" Width="80" FontWeight="Bold" Margin="20,0,0,0"/>
+                                    <TextBlock x:Name="PositionText" Text="(0,0,0)" Width="120"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Money:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="MoneyText" Text="0" Width="50"/>
+                                    <TextBlock Text="Stamina:" Width="80" FontWeight="Bold" Margin="20,0,0,0"/>
+                                    <TextBlock x:Name="StaminaText" Text="0" Width="80"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Ammo:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="AmmoText" Text="0" Width="50"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <TextBlock Text="Level:" Width="80" FontWeight="Bold"/>
+                                    <TextBlock x:Name="LevelText" Text="Unknown" Width="100"/>
+                                    <TextBlock Text="Time:" Width="80" FontWeight="Bold" Margin="20,0,0,0"/>
+                                    <TextBlock x:Name="GameTimeText" Text="00:00" Width="80"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Active Monitoring" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <CheckBox x:Name="MonitorFpsCheckbox" Content="Monitor FPS" Margin="0,5" IsChecked="True"/>
+                                <CheckBox x:Name="MonitorHealthCheckbox" Content="Monitor Player Health" Margin="0,5" IsChecked="True"/>
+                                <CheckBox x:Name="MonitorPositionCheckbox" Content="Monitor Player Position" Margin="0,5" IsChecked="True"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,10">
+                                    <Button Content="Start Monitoring" Click="StartMonitoring_Click" Width="120" Margin="0,0,5,0"/>
+                                    <Button Content="Stop Monitoring" Click="StopMonitoring_Click" Width="120"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <GroupBox Header="Live Updates" Margin="0,0,0,10">
+                            <StackPanel Margin="5">
+                                <TextBlock Text="Update Interval (ms):" Margin="0,0,0,5"/>
+                                <Slider x:Name="UpdateIntervalSlider" Minimum="100" Maximum="2000" Value="500" TickFrequency="100" Margin="0,0,0,10"/>
+                                <TextBlock x:Name="UpdateIntervalText" Text="Update every 500ms" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="Value Finder">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <WrapPanel Grid.Row="0" Margin="0,0,0,8">
+                        <Button x:Name="ValueFinderRefreshButton" Content="Refresh Key Objects" Width="170" Margin="0,0,10,0" Click="ValueFinderRefresh_Click"/>
+                        <TextBlock Text="Filter:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox x:Name="ValueFinderFilterBox" Width="280" TextChanged="ValueFinderFilterBox_TextChanged"/>
+                    </WrapPanel>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Header="Key Objects" Margin="0,0,10,0">
+                            <ListView x:Name="KeyObjectsListView" SelectionChanged="KeyObjectsListView_SelectionChanged">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Key" Width="90" DisplayMemberBinding="{Binding Key}"/>
+                                        <GridViewColumn Header="Name" Width="160" DisplayMemberBinding="{Binding Name}"/>
+                                        <GridViewColumn Header="Type" Width="260" DisplayMemberBinding="{Binding Type}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Header="Components" Margin="0,0,10,0">
+                            <ListView x:Name="ComponentsListView" SelectionChanged="ComponentsListView_SelectionChanged">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Type" Width="360" DisplayMemberBinding="{Binding Type}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Header="Numeric Members">
+                            <ListView x:Name="NumericMembersListView" SelectionChanged="NumericMembersListView_SelectionChanged" MouseDoubleClick="NumericMembersListView_MouseDoubleClick">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Kind" Width="90" DisplayMemberBinding="{Binding Kind}"/>
+                                        <GridViewColumn Header="Name" Width="180" DisplayMemberBinding="{Binding Name}"/>
+                                        <GridViewColumn Header="Declaring Type" Width="320" DisplayMemberBinding="{Binding DeclaringType}"/>
+                                        <GridViewColumn Header="Type" Width="130" DisplayMemberBinding="{Binding ValueType}"/>
+                                        <GridViewColumn Header="Value" Width="110" DisplayMemberBinding="{Binding Value}"/>
+                                        <GridViewColumn Header="Context" Width="260" DisplayMemberBinding="{Binding Context}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </Grid>
+
+                    <Border Grid.Row="2"
+                            Background="{DynamicResource PL.SurfaceAltBrush}"
+                            BorderBrush="{DynamicResource PL.BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource PL.CornerRadiusSm}"
+                            Padding="10"
+                            Margin="0,8,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="Selected:" FontWeight="SemiBold" Margin="0,0,8,0"/>
+                                <TextBlock x:Name="SelectedMemberText" Text="None" Foreground="{DynamicResource PL.TextSecondaryBrush}"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="Bind to:" VerticalAlignment="Center" Margin="16,0,6,0"/>
+                            <ComboBox Grid.Row="0" Grid.Column="2" x:Name="BindSlotComboBox" Width="120" Margin="0,0,10,0"/>
+                            <Button Grid.Row="0" Grid.Column="3" x:Name="BindSelectedMemberButton" Content="Bind" Width="90" Click="BindSelectedMember_Click" IsEnabled="False"/>
+                            <Button Grid.Row="0" Grid.Column="3" x:Name="EditSelectedMemberButton" Content="Edit" Width="90" Margin="96,0,0,0" Click="EditSelectedMember_Click" IsEnabled="False"/>
+
+                            <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,8,0,0" VerticalAlignment="Center">
+                                <Button x:Name="AutoDetectBindingButton" Content="Auto Detect" Width="110" Margin="0,0,12,0" Click="AutoDetectBinding_Click"/>
+
+                                <TextBlock Text="Value Scan:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBox x:Name="ValueScanValueBox" Width="110" Margin="0,0,10,0"/>
+
+                                <TextBlock Text="Tol:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBox x:Name="ValueScanTolBox" Width="70" Margin="0,0,10,0"/>
+
+                                <TextBlock Text="Max:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBox x:Name="ValueScanMaxBox" Width="55" Margin="0,0,10,0"/>
+
+                                <TextBlock Text="Depth:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBox x:Name="ValueScanDepthBox" Width="50" Margin="0,0,10,0"/>
+
+                                <Button x:Name="ValueScanButton" Content="Scan" Width="80" Click="ValueScan_Click"/>
+                            </WrapPanel>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+                                       x:Name="ValueFinderStatusText"
+                                       Foreground="{DynamicResource PL.TextSecondaryBrush}"
+                                       Margin="0,8,0,0"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Discovery">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <WrapPanel Grid.Row="0" Margin="0,0,0,8">
+                        <Button x:Name="DiscoveryScanButton" Content="Scan" Width="90" Margin="0,0,10,0" Click="DiscoveryScan_Click"/>
+                        <TextBlock Text="Concept:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <ComboBox x:Name="DiscoveryConceptBox" Width="180" Margin="0,0,10,0" SelectionChanged="DiscoveryConcept_SelectionChanged"/>
+                        <Button x:Name="DiscoveryConfirmButton" Content="Confirm Mapping" Width="130" Margin="0,0,10,0" Click="DiscoveryConfirm_Click"/>
+                        <TextBlock Text="Label:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox x:Name="DiscoveryExperimentLabelBox" Width="200" Margin="0,0,10,0"/>
+                        <Button x:Name="DiscoveryBeginExperimentButton" Content="Begin Experiment" Width="130" Margin="0,0,6,0" Click="DiscoveryBeginExperiment_Click"/>
+                        <Button x:Name="DiscoveryEndExperimentButton" Content="End Experiment" Width="120" Click="DiscoveryEndExperiment_Click" IsEnabled="False"/>
+                        <Button x:Name="DiscoveryStartObserveButton" Content="Start Observe" Width="110" Margin="10,0,6,0" Click="DiscoveryStartObserve_Click"/>
+                        <Button x:Name="DiscoveryPullAnalyzeButton" Content="Pull+Analyze" Width="110" Margin="0,0,6,0" Click="DiscoveryPullAnalyze_Click" IsEnabled="False"/>
+                        <Button x:Name="DiscoveryStopObserveButton" Content="Stop Observe" Width="110" Margin="0,0,10,0" Click="DiscoveryStopObserve_Click" IsEnabled="False"/>
+                        <TextBlock Text="Event:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox x:Name="DiscoveryEventBox" Width="140" Margin="0,0,6,0"/>
+                        <Button x:Name="DiscoveryMarkEventButton" Content="Mark" Width="70" Click="DiscoveryMarkEvent_Click" IsEnabled="False"/>
+                    </WrapPanel>
+
+                    <WrapPanel Grid.Row="1" Margin="0,0,0,8">
+                        <Button x:Name="DiscoverySuggestExperimentButton" Content="Suggest Next" Width="120" Margin="0,0,10,0" Click="DiscoverySuggestExperiment_Click"/>
+                        <Button x:Name="DiscoveryRunDamageTestButton" Content="Run Damage Test" Width="140" Margin="0,0,6,0" Click="DiscoveryRunDamageTest_Click"/>
+                        <Button x:Name="DiscoveryRunAmmoTestButton" Content="Run Ammo Test" Width="130" Margin="0,0,6,0" Click="DiscoveryRunAmmoTest_Click"/>
+                        <Button x:Name="DiscoveryRunSprintTestButton" Content="Run Sprint Test" Width="140" Margin="0,0,6,0" Click="DiscoveryRunSprintTest_Click"/>
+                        <Button x:Name="DiscoveryRunBuyTestButton" Content="Run Buy Test" Width="120" Margin="0,0,6,0" Click="DiscoveryRunBuyTest_Click"/>
+                        <Button x:Name="DiscoveryRunCooldownTestButton" Content="Run Cooldown Test" Width="160" Margin="0,0,10,0" Click="DiscoveryRunCooldownTest_Click"/>
+                        <TextBlock x:Name="DiscoverySuggestionText" VerticalAlignment="Center" Foreground="{DynamicResource PL.TextSecondaryBrush}"/>
+                    </WrapPanel>
+
+                    <GroupBox Grid.Row="2" Header="Ranked Candidates">
+                        <ListView x:Name="DiscoveryCandidatesListView" SelectionMode="Extended">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Score" Width="70" DisplayMemberBinding="{Binding Score}"/>
+                                    <GridViewColumn Header="Name" Width="45" DisplayMemberBinding="{Binding NameScore}"/>
+                                    <GridViewColumn Header="Type" Width="45" DisplayMemberBinding="{Binding TypeScore}"/>
+                                    <GridViewColumn Header="Ctx" Width="45" DisplayMemberBinding="{Binding ContextScore}"/>
+                                    <GridViewColumn Header="Dyn" Width="45" DisplayMemberBinding="{Binding DynamicScore}"/>
+                                    <GridViewColumn Header="DB" Width="45" DisplayMemberBinding="{Binding DatabaseScore}"/>
+                                    <GridViewColumn Header="KB" Width="45" DisplayMemberBinding="{Binding KnowledgeScore}"/>
+                                    <GridViewColumn Header="Rel" Width="45" DisplayMemberBinding="{Binding RelationScore}"/>
+                                    <GridViewColumn Header="Caus" Width="45" DisplayMemberBinding="{Binding CausalScore}"/>
+                                    <GridViewColumn Header="Kind" Width="70" DisplayMemberBinding="{Binding Kind}"/>
+                                    <GridViewColumn Header="Member" Width="180" DisplayMemberBinding="{Binding Member}"/>
+                                    <GridViewColumn Header="Declaring Type" Width="280" DisplayMemberBinding="{Binding DeclaringType}"/>
+                                    <GridViewColumn Header="Component" Width="280" DisplayMemberBinding="{Binding ComponentType}"/>
+                                    <GridViewColumn Header="Writable" Width="70" DisplayMemberBinding="{Binding Writable}"/>
+                                    <GridViewColumn Header="GameObject Path" Width="420" DisplayMemberBinding="{Binding Path}"/>
+                                    <GridViewColumn Header="Confirmed" Width="80" DisplayMemberBinding="{Binding Confirmed}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </GroupBox>
+
+                    <WrapPanel Grid.Row="3" Margin="0,8,0,0">
+                        <Button x:Name="DiscoveryFreezeCheatButton" Content="Freeze" Width="90" Margin="0,0,6,0" Click="DiscoveryFreezeCheat_Click"/>
+                        <Button x:Name="DiscoveryNoDecreaseCheatButton" Content="No Decrease" Width="110" Margin="0,0,6,0" Click="DiscoveryNoDecreaseCheat_Click"/>
+                        <Button x:Name="DiscoveryAutoFillCheatButton" Content="Auto Refill" Width="110" Margin="0,0,6,0" Click="DiscoveryAutoFillCheat_Click"/>
+                        <Button x:Name="DiscoveryCheatListButton" Content="List Cheats" Width="100" Click="DiscoveryCheatList_Click"/>
+                    </WrapPanel>
+
+                    <Grid Grid.Row="4" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" x:Name="DiscoveryAutoButton" Content="Auto Discover" Width="120" Margin="0,0,8,0" Click="DiscoveryAuto_Click"/>
+                        <Button Grid.Column="1" x:Name="DiscoveryAutoCancelButton" Content="Cancel" Width="80" Margin="0,0,14,0" Click="DiscoveryAutoCancel_Click" IsEnabled="False"/>
+                        <CheckBox Grid.Column="2" x:Name="DiscoveryAutoApplyCheatsBox" Content="Auto apply cheats" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                        <ProgressBar Grid.Column="3" x:Name="DiscoveryProgressBar" Height="18" Minimum="0" Maximum="1"/>
+                        <TextBlock Grid.Column="4" Text="Hotkey:" VerticalAlignment="Center" Margin="12,0,6,0"/>
+                        <TextBox Grid.Column="5" x:Name="DiscoveryHotkeyBox" Width="120" Margin="0,0,6,0"/>
+                        <Button Grid.Column="6" x:Name="DiscoveryHotkeyApplyButton" Content="Set" Width="60" Click="DiscoveryHotkeyApply_Click"/>
+                    </Grid>
+
+                    <TextBlock Grid.Row="5" x:Name="DiscoveryStatusText" Foreground="{DynamicResource PL.TextSecondaryBrush}" Margin="0,8,0,0"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Dynamic Cheats">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <WrapPanel Grid.Row="0" Margin="0,0,0,8">
+                        <TextBlock Text="Genre:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <ComboBox x:Name="DynamicGenreBox" Width="140" Margin="0,0,10,0"/>
+                        <TextBlock Text="Version:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox x:Name="DynamicVersionBox" Width="160" Margin="0,0,10,0"/>
+                        <TextBlock Text="Passes:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <ComboBox x:Name="DynamicScanPassesBox" Width="60" Margin="0,0,10,0" SelectionChanged="DynamicScanPassesBox_SelectionChanged"/>
+                        <CheckBox x:Name="DynamicAggressiveScanBox" Content="Aggressive scan" VerticalAlignment="Center" Margin="0,0,10,0" Checked="DynamicAggressiveScan_Changed" Unchecked="DynamicAggressiveScan_Changed"/>
+                        <Button x:Name="DynamicSaveProfileButton" Content="Save" Width="70" Margin="0,0,14,0" Click="DynamicSaveProfile_Click"/>
+                        <Button x:Name="DynamicRefreshButton" Content="Refresh" Width="90" Margin="0,0,6,0" Click="DynamicRefresh_Click"/>
+                        <Button x:Name="DynamicApplySelectedButton" Content="Apply Selected" Width="120" Margin="0,0,6,0" Click="DynamicApplySelected_Click"/>
+                        <Button x:Name="DynamicUpvoteButton" Content="Upvote" Width="80" Margin="0,0,6,0" Click="DynamicUpvote_Click"/>
+                        <Button x:Name="DynamicDownvoteButton" Content="Downvote" Width="90" Margin="0,0,14,0" Click="DynamicDownvote_Click"/>
+                        <Button x:Name="SavedCheatsLoadButton" Content="Load Saved" Width="110" Margin="0,0,6,0" Click="SavedCheatsLoad_Click"/>
+                        <Button x:Name="SavedCheatsApplyButton" Content="Apply Saved" Width="110" Margin="0,0,6,0" Click="SavedCheatsApply_Click"/>
+                        <Button x:Name="SavedCheatsRemoveButton" Content="Remove Saved" Width="120" Margin="0,0,14,0" Click="SavedCheatsRemove_Click"/>
+                        <CheckBox x:Name="DynamicMonitorCheatsBox" Content="Monitor active cheats" VerticalAlignment="Center" Margin="0,0,10,0" Checked="DynamicMonitorCheats_Changed" Unchecked="DynamicMonitorCheats_Changed"/>
+                        <TextBlock x:Name="DynamicPerfText" VerticalAlignment="Center" Foreground="{DynamicResource PL.TextSecondaryBrush}"/>
+                    </WrapPanel>
+
+                    <TabControl Grid.Row="1">
+                        <TabItem Header="Recommendations">
+                            <ListView x:Name="DynamicCheatsListView" SelectionMode="Extended">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Category" Width="110" DisplayMemberBinding="{Binding Category}"/>
+                                        <GridViewColumn Header="Concept" Width="120" DisplayMemberBinding="{Binding Concept}"/>
+                                        <GridViewColumn Header="Conf" Width="70" DisplayMemberBinding="{Binding Confidence}"/>
+                                        <GridViewColumn Header="Mode" Width="90" DisplayMemberBinding="{Binding Mode}"/>
+                                        <GridViewColumn Header="Member" Width="170" DisplayMemberBinding="{Binding Member}"/>
+                                        <GridViewColumn Header="Component" Width="240" DisplayMemberBinding="{Binding ComponentType}"/>
+                                        <GridViewColumn Header="Path" Width="420" DisplayMemberBinding="{Binding Path}"/>
+                                        <GridViewColumn Header="Applied" Width="80" DisplayMemberBinding="{Binding Applied}"/>
+                                        <GridViewColumn Header="Alts" Width="280" DisplayMemberBinding="{Binding Alternatives}"/>
+                                        <GridViewColumn Header="Reason" Width="260" DisplayMemberBinding="{Binding Reason}"/>
+                                        <GridViewColumn Header="Actions" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Content="Bind" Width="60" Margin="0,0,6,0" IsEnabled="{Binding BindEnabled}" Click="DynamicBindRow_Click" Tag="{Binding}"/>
+                                                        <Button Content="{Binding TestLabel}" Width="80" IsEnabled="{Binding TestEnabled}" Click="DynamicRunTestRow_Click" Tag="{Binding}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </TabItem>
+                        <TabItem Header="Saved">
+                            <ListView x:Name="SavedCheatsListView" SelectionMode="Extended">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Kind" Width="70" DisplayMemberBinding="{Binding Kind}"/>
+                                        <GridViewColumn Header="Concept" Width="120" DisplayMemberBinding="{Binding Concept}"/>
+                                        <GridViewColumn Header="Mode" Width="90" DisplayMemberBinding="{Binding Mode}"/>
+                                        <GridViewColumn Header="Member" Width="200" DisplayMemberBinding="{Binding Member}"/>
+                                        <GridViewColumn Header="Added" Width="140" DisplayMemberBinding="{Binding Added}"/>
+                                        <GridViewColumn Header="Applied" Width="70" DisplayMemberBinding="{Binding AppliedCount}"/>
+                                        <GridViewColumn Header="Command" Width="520" DisplayMemberBinding="{Binding Command}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </TabItem>
+                    </TabControl>
+
+                    <TextBlock Grid.Row="2" x:Name="DynamicStatusText" Foreground="{DynamicResource PL.TextSecondaryBrush}" Margin="0,8,0,0"/>
+                    <TextBlock Grid.Row="3" x:Name="DynamicWarningsText" Foreground="{DynamicResource PL.TextSecondaryBrush}" Margin="0,4,0,0"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        
+        <!-- Status Bar -->
+        <StatusBar Grid.Row="2">
+            <TextBlock x:Name="GameStatusText" Text="Ready to connect to game..."/>
+        </StatusBar>
+    </Grid>
+</UserControl>
